@@ -19,6 +19,7 @@ jobs:
         echo "using shell command"
         echo "$GITHUB_ACTOR"
         echo "$PWD"
+        mkdir "$GITHUB_ACTOR"
         echo "using workflow command"
         echo "${{ env.GITHUB_ACTOR }}"
-        env | sort
+        ls -all
