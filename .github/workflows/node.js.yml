@@ -5,29 +5,25 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+env:
+  ACTION_MAIL: "famahmood2@liveutm.onmicrosoft.com"
+  ACTION_NAME: "MF-ML"
+  ACTION_BRANCH: "master"
+  ACTION_MESSAGE: "Action commit"
+  
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    env:
-      ACTION_MAIL: "famahmood2@liveutm.onmicrosoft.com"
-      ACTION_NAME: "MF-ML"
-      ACTION_BRANCH: "master"
-      ACTION_MESSAGE: "Action commit"
-
     steps:
     - uses: actions/checkout@v2
     - name: Display current directory and Lists all files and folders      
       run: |
         echo "using shell command"
-        echo "$GITHUB_ACTOR"
-        echo "$PWD"
         mkdir "$GITHUB_ACTOR"
+        ls -all
+  push:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
     - name: action-push
       uses: ludeeus/action-push@0.0.1
-      with:        
-        action_mail: ${{ env.ACTION_MAIL }}
-        action_name: ${{ env.ACTION_NAME }}
-        action_branch: ${{ env.ACTION_BRANCH }}
-        action_message: ${{ env.ACTION_MESSAGE }}
