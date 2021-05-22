@@ -15,4 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Display current directory and Lists all files and folders      
-      run: env | sort
+      run: |
+        ${{ env.GITHUB_ACTOR }}
+        env | sort
