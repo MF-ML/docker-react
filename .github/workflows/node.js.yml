@@ -5,11 +5,6 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-env:
-  ACTION_MAIL: "famahmood2@liveutm.onmicrosoft.com"
-  ACTION_NAME: "MF-ML"
-  ACTION_BRANCH: "master"
-  ACTION_MESSAGE: "Action commit"
   
 jobs:
   build:
@@ -20,10 +15,9 @@ jobs:
       run: |
         echo "using shell command"
         mkdir "$GITHUB_ACTOR"
+        cd "$GITHUB_ACTOR"
+        echo "console.log('hi');" > test.js
         ls -all
-  push:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-    - name: action-push
-      uses: ludeeus/action-push@0.0.1
+        cd ..
+        ls -all
+ 
