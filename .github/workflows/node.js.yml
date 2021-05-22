@@ -16,6 +16,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Display current directory and Lists all files and folders      
       run: |
+        echo "using shell command"
         echo "$GITHUB_ACTOR"
+        echo "$PWD"
+        echo "using workflow command"
         echo "${{ env.GITHUB_ACTOR }}"
         env | sort
