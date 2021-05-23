@@ -11,10 +11,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: build docker
       run: docker build -f Dockerfile.dev -t arshaaria/docker-react .
-    - name: run test command
-      run: |
-        docker run arshaaria/docker-react npm run test 
-        q
+    - name: docker log in
+      run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+     
      
         
  
