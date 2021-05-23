@@ -1,0 +1,20 @@
+name: List files and folders
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: build docker
+      run: doker build -f Dokerfile.dev -t arshaaria/docer-react .
+    - name: run test command
+      run: docker run arshaaria/docker-react npm run test -- --coverage
+     
+        
+ 
