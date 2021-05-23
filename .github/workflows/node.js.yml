@@ -11,16 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: uplad artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: test
+        path: .
     - name: Display current directory and Lists all files and folders      
       run: |
         echo "using shell command"
         mkdir "$GITHUB_ACTOR"
         cd "$GITHUB_ACTOR"
         echo "console.log('hi');" > test.js
-    - name: uplad artifact
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: test
-        path: .
+    
         
  
