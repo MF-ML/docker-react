@@ -1,4 +1,4 @@
-# Build Status Badge: ![](https://github.com/MF-ML/dpcker-react/workflows/node.js/badge.svg)
+# Build Status Badge: ![](https://github.com/MF-ML/docker-react/workflows/docker/badge.svg)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
