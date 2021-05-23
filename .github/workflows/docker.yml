@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: build docker
-      run: doker build -f Dokerfile.dev -t arshaaria/docer-react .
+      run: docker build -f Dockerfile.dev -t arshaaria/docker-react .
     - name: run test command
       run: docker run arshaaria/docker-react npm run test -- --coverage
      
