@@ -14,7 +14,9 @@ jobs:
     - name: build docker
       run: docker build -f Dockerfile.dev -t arshaaria/docker-react .
     - name: run test command
-      run: docker run arshaaria/docker-react npm run test -- --coverage
+      run: |
+        docker run arshaaria/docker-react npm run test 
+        q
      
         
  
